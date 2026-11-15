@@ -15,8 +15,11 @@ slug:
   case: preserved
   example: 'Layer 1 — C authorizer -> Layer-1-C-authorizer'
 
+# ADR-001 (2026-11-15): green check for a name catalogue. Data unchanged,
+# checks tuned to it. Restoring the old values brings the warnings back.
 structure:
-  node_length: { min: 3, max: 75 }
+  # strip_references: a see: pointer is transport, not prose.
+  node_length: { min: 3, max: 75, strip_references: true }
   # Issue #61 — granular node_length. Every member below is OPTIONAL: the
   # bare { min, max } line above already means unit chars / scope title /
   # strip_references false / severity warn (the v0.10 measurement), and any
@@ -48,20 +51,25 @@ structure:
   #                         # indent_aligned: continuations must start at
   #                         # the bullet's text column. severity: the band
   #                         # for ALL multiline findings.
-  siblings: { min: 3, max: 11 }
+  # ADR-001: siblings min 1, not 3 — a cycle with 1 winner is real data.
+  siblings: { min: 1, max: 11 }
   depth: { min: 4, max: 12 }
-  single_child_collapse: true
+  # ADR-001: collapsing a 1-winner cycle loses its year grouping.
+  single_child_collapse: false
   empty_nodes: false
 
 style:
-  prefer: sibling
+  # ADR-001: winners are grouped outlines; collapse advice was wrong here.
+  prefer: nested
   force_nested_above: 6
   force_sibling_below: 3
-  shared_prefix_detection: true
+  # ADR-001: 7 siblings starting "PT" are 7 distinct companies, not a group.
+  shared_prefix_detection: false
 
 content:
   tbd_allowed: true
-  max_tbd_per_file: 5
+  # ADR-001: 118 honest TBDs; the cap of 5 was written for software specs.
+  max_tbd_per_file: null
 
 references:
   mode: pointer
@@ -130,7 +138,9 @@ references:
   # forbidden_targets: []
 
 redundancy:
-  enabled: true
+  # ADR-001: off. 7,536 false positives on a proper-noun catalogue:
+  # repeated programme names, TBDs, near-identical startup names.
+  enabled: false
   word_frequency_threshold: 4
   phrase_overlap_threshold: 0.7
   cross_file_threshold: 2
