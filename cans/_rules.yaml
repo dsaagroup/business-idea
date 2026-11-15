@@ -1,0 +1,435 @@
+# Anchor slugs (issue #53) — documentation only: the algorithm is fixed, not
+# configurable. `cans slug "<node text>"` prints the exact anchor fragment.
+#   1. The dash family (hyphen `-`, figure dash, en dash, em dash, horizontal
+#      bar, minus sign, and their U+2010–U+2015 / U+2043 / U+2212 / U+FE58 /
+#      U+FE63 / U+FF0D variants) and the underscore `_` are SEPARATORS, exactly
+#      like every whitespace run.
+#   2. A run of separators collapses to ONE `-`.
+#   3. Every other character is preserved verbatim, case included.
+#   4. Leading/trailing separators are dropped.
+# Matching is tolerant (case- and separator-insensitive); the slug is the
+# canonical spelling refs should use.
+slug:
+  algorithm: dash-normalized
+  collapse: separator-runs-to-one-hyphen
+  case: preserved
+  example: 'Layer 1 — C authorizer -> Layer-1-C-authorizer'
+
+structure:
+  node_length: { min: 3, max: 120 }
+  # Issue #61 — granular node_length. Every member below is OPTIONAL: the
+  # bare { min, max } line above already means unit chars / scope title /
+  # strip_references false / severity warn (the v0.10 measurement), and any
+  # pre-#61 config stays legal. Opt in per knob:
+  #   unit: chars | words | tokens — what "length" counts. words =
+  #     whitespace-split count; tokens = ceil(chars / 3.5), the CANONICAL
+  #     estimate — token_budget.estimate_chars_per_token does not
+  #     re-calibrate it.
+  #   scope: title | body | total — title = the bullet line; body = the
+  #     indented continuation lines only (a node WITHOUT continuations is
+  #     not evaluated); total = title + continuations folded with single
+  #     spaces.
+  #   strip_references: true strips `see: <target>` spans before measuring —
+  #     a long pointer is transport, not prose (default false).
+  #   severity: error | warn | off — the band for BOTH min and max findings
+  #     (default warn, replacing v0.10's hardcoded max: error / min:
+  #     warning pair — set severity: error to restore fatal, or run
+  #     `cans check --structure=strict`).
+  # multiline:             # Issue #61 — the wrapped-prose policy. The
+  #   mode: allow           # section is absent by default = policy OFF.
+  #   max_lines: 4          # Continuation lines are the non-bullet lines
+  #   indent_aligned: true  # indented deeper than the owning bullet —
+  #   severity: warn        # never outline nodes (node counts, depth and
+  #                         # sibling caps are unchanged). mode: allow |
+  #                         # forbid | fold — forbid flags ANY continuation;
+  #                         # fold measures the node as its folded
+  #                         # title+continuation text regardless of scope.
+  #                         # max_lines: ceiling per node (null = no cap).
+  #                         # indent_aligned: continuations must start at
+  #                         # the bullet's text column. severity: the band
+  #                         # for ALL multiline findings.
+  siblings: { min: 1, max: 12 }
+  depth: { min: 1, max: 5 }
+  single_child_collapse: true
+  empty_nodes: false
+
+style:
+  prefer: sibling
+  force_nested_above: 6
+  force_sibling_below: 3
+  shared_prefix_detection: true
+
+content:
+  tbd_allowed: true
+  max_tbd_per_file: 5
+
+references:
+  mode: pointer
+  back_pointers: true
+  max_hops: 1
+  orphan_check: true
+  duplicate_home_check: true
+  # Issue #55 — inter-repo pointers. Declare a sibling checkout by name and
+  # point at it with `see: name://sub/path` (path relative to the declared
+  # root; the root path resolves from the PROJECT root, the parent of cans/):
+  #   external_roots:
+  #     kelir-cloud: "../kelir-cloud/cans"
+  #   → see: kelir-cloud://artifacts/examples/multi-vm-swarm.rs
+  # Default: none (every name:// target is an undeclared-root broken ref).
+  # external_roots: {}
+  # Issue #57 — per-file pointer aliasing: footnote-style short `see:` uses
+  # for repeated targets. One definition per file, at the end:
+  #   - map_shared_region: see: [1]
+  #   - register_veto: see: [1]
+  #   ...
+  #   - [1]: kelir-cloud://artifacts/examples/multi-vm-swarm.rs
+  # An alias resolves exactly like the full pointer (existence, anchors,
+  # external roots, containment, orphan_check) and every use counts as a ref.
+  # Definition lines are file metadata — never nodes, never node_length.
+  # Defaults when the block is absent/empty: disabled / file / both / 2.
+  #   enabled:  opt-in master switch — disabled + any alias use or definition
+  #             present is an ERROR (the fix is `cans alias expand`)
+  #   scope:    "file" is the only legal value in v1
+  #   style:    numeric | named | both — which alias spellings are legal
+  #   min_uses: only targets used >= N times per file (uses + full
+  #             spellings) are alias-eligible; below-threshold aliases error
+  # `cans alias collapse` migrates a full-pointer corpus to aliases;
+  # `cans alias expand` migrates it back (both idempotent, --dry-run to
+  # preview).
+  # aliasing:
+  #   enabled: false
+  #   scope: file
+  #   style: both
+  #   min_uses: 2
+  #   include:                    # issue #65 — alias + verify plugin files:
+  #     - cans/plugins/*.md       # workspace-relative globs (the core/glob.ts
+  #                               # grammar, anchored to the whole `/`-joined
+  #                               # path) naming files OUTSIDE the spec corpus
+  #                               # that join the checked set when aliasing is
+  #                               # enabled — parsed for refs and alias tables,
+  #                               # verified exactly like corpus files (never
+  #                               # structure/style/content-checked). Absent
+  #                               # or empty = corpus-only, byte-identical to
+  #                               # the pre-#65 behavior.
+  # Issue #62 — per-source bans on pointer targets (the layering guard):
+  # write the abstraction rule down and `cans check` enforces it. Absent,
+  # empty or null = the feature is OFF. Each entry bans a class of TARGET
+  # for a class of SOURCE file:
+  #   - source: "cans/[0-9]*.md"    # REQUIRED glob over the referrer's path
+  #     pattern: "^(cans/)?plugins/.*"  # REQUIRED regex over the target
+  #     severity: error             # error (default) | warning
+  #     message: "…"                # optional — reported verbatim
+  #     except: ["cans/02-plugin-model.md"]  # optional exempt globs
+  # `source`/`except` globs match the workspace-relative path (a leading
+  # cans/ is optional and stripped on both sides); `pattern` is a
+  # JavaScript regex (SEARCH semantics — anchor with ^ yourself) over the
+  # normalized file part of the target, AFTER alias expansion (aliasing
+  # cannot dodge a ban); an external name:// target is tested in both its
+  # written and root-relative forms. `except` is the scoping answer: ban
+  # the numbered core specs → plugins/, exempt the catalog and the index.
+  # forbidden_targets: []
+
+redundancy:
+  enabled: true
+  word_frequency_threshold: 4
+  phrase_overlap_threshold: 0.7
+  cross_file_threshold: 2
+  fuzzy: true
+  # Issue #47: layer 3 (fuzzy typos) tuning parameters. The check switch is
+  # `fuzzy` above; these tune it (omitted/deleted → the defaults shown here,
+  # §18 parameter semantics — they never turn the layer off).
+  #   fuzzy_max_distance: max Levenshtein distance for a typo pair. Default 2.
+  #     At very large scale (thousands of nodes) distance-2 pairs like
+  #     content↔concept / public↔publish dominate; lower to 1 to keep only
+  #     one-character typos (flavour↔flavor).
+  #   fuzzy_min_word_length: words shorter than this never pair as typos.
+  #     Default 5 (the historical "> 4 chars" floor). Raise to suppress
+  #     medium-length near misses.
+  fuzzy_max_distance: 2
+  fuzzy_min_word_length: 5
+  stopwords: [the, a, an, of, to, in, for, and, or, with, must, shall, requires]
+  synonyms:
+    - [postgres, postgresql, pg]
+    - [auth, authentication, sign-in, signin]
+    - [api, endpoint, route]
+    - [frontend, client, ui]
+    - [db, database, storage]
+
+token_budget:
+  enabled: true
+  default_limit: 4096
+  estimate_chars_per_token: 3.5
+  warn_threshold: 0.8
+
+# Issue #59 — output preferences. Display switches, not checks: this section
+# never joins the delete/override reconciliation (listing it alone cannot
+# turn an engine off), and an omitted key keeps its documented default.
+output:
+  # slug_hints: the author-time slug-safety notes (refs.slug.hint, issue #53)
+  # are OPT-IN. false (the default): `cans check` prints no hint items and
+  # --json carries no info items — only the refs.hintCount integer. true: the
+  # band prints folded (fully with --show refs) and rides --json. The
+  # one-run override is `cans check --hints` (flag or config — either
+  # enables). For a single anchor, `cans slug "<node text>"` is the precise
+  # tool and needs no flag.
+  slug_hints: false
+
+# Issue #63 — agent execution policies for autonomous agents working in this
+# workspace. OPT-IN: the shipped template does NOT enable the block (the
+# example below is fully commented out — an unsupervised workspace until you
+# spell it). To opt in, uncomment `agent_guardrails:` and the members you
+# want; every omitted member keeps its documented default (a partial block
+# deep-merges over the defaults), and an explicitly EMPTY `agent_guardrails:`
+# is legal and means OFF. The section is a PARAMETER section, not a check
+# section: it never joins the delete/override reconciliation (listing it can
+# only add guardrails findings, never flip an engine off), and its engine
+# inspects LOCAL WORKSPACE STATE ONLY — task declarations, the devlog,
+# AGENTS.md, build-output directories. It never touches CI/CD or runner
+# configurations. Four sub-policies, one per failure mode the issue names:
+#   isolation           — concurrent agents building into the same shared
+#                         output directories (target/, dist/, build/, out/ at
+#                         the workspace root) stomp each other's artifacts.
+#                         mode: require-target-prefix forces every
+#                         task-declared build output under `prefix`.
+#   manifests           — a half-written root manifest (a dependency list cut
+#                         off mid-edit) breaks every concurrent reader.
+#                         atomic_writes_only forbids in-place rewrites of the
+#                         protected manifests — copy-modify-swap instead.
+#   devlog              — an evicted or context-reset agent leaves nothing
+#                         behind. The append-only handoff log carries
+#                         touched_files / test_outcomes / still_open so the
+#                         next agent inherits the state (the _tasks/
+#                         checkboxes do not carry it).
+#   negative_invariants — strictly forbidden patterns, dependencies and
+#                         implementations must be visible UP FRONT, under a
+#                         fixed AGENTS.md anchor heading — not discovered by
+#                         failed review.
+# Keys and defaults (§18 of docs/cans.architecture.md is the full contract):
+#   enabled        master switch — the whole block is inert unless true
+#                  (default false)
+#   severity       error | warn — the band ALL guardrails findings emit at;
+#                  error fails the run (exit 2), warn is advisory
+#                  (default error)
+#   isolation.mode          require-target-prefix | off (default off)
+#   isolation.prefix        the workspace-relative directory prefix agents
+#                           must declare build outputs under (default
+#                           target/agent- → target/agent-<name>/)
+#   manifests.atomic_writes_only   true (default) | false
+#   manifests.protected     the protected root manifests, workspace-relative
+#                           (default [Cargo.toml, package.json, pyproject.toml])
+#   devlog.enabled          true (default) | false
+#   devlog.path             the workspace-relative handoff-log path (default
+#                           log/devlog.md)
+#   devlog.required_sections  headings the log must carry (default
+#                           [touched_files, test_outcomes, still_open])
+#   negative_invariants.required   true (default) | false
+#   negative_invariants.anchor     the AGENTS.md heading the engine looks for
+#                           (default "Negative Invariants" — the heading this
+#                           template ships in AGENTS.md)
+# Every path here is a workspace-relative POSIX path: no leading "/", no ".."
+# segment, no "\" — the engine joins these onto the workspace root verbatim,
+# so anything else is a line-numbered config error like every other §18 key.
+# agent_guardrails:
+#   enabled: true
+#   severity: error
+#   isolation:
+#     mode: require-target-prefix
+#     prefix: target/agent-
+#   manifests:
+#     atomic_writes_only: true
+#     protected: [Cargo.toml, package.json, pyproject.toml]
+#   devlog:
+#     enabled: true
+#     path: log/devlog.md
+#     required_sections: [touched_files, test_outcomes, still_open]
+#   negative_invariants:
+#     required: true
+#     anchor: Negative Invariants
+
+# Issue #66 — codebase inbound references. Real implementations annotate
+# functions, types and logic with pointers back to canonical spec nodes —
+# `// see: 01-auth.md#Sessions` in Rust, `# see: 04-api.md#Routing` in
+# Python, block comments in Go, YAML keys — and until now those rotted
+# silently: no check failed when a spec node was renamed, and no query could
+# trace which source files reference a node (the reverse-traceability gap).
+# OPT-IN: the shipped template does NOT enable the block (the example below
+# is fully commented out — the scanner is OFF until you spell it). To opt
+# in, uncomment `codebase:` and the members you want; every omitted member
+# keeps its documented default (a partial block deep-merges over the
+# defaults), and an explicitly EMPTY `codebase:` is legal and means OFF.
+# The section is a PARAMETER section, not a check section: it never joins
+# the delete/override reconciliation (listing it can only ADD codebase
+# findings, never flip an engine off). The one-run override is
+# `cans check --codebase` (flag or config — either enables; the
+# output.slug_hints precedent).
+#
+# Keys and defaults (the CodebaseRules contract, src/types.ts):
+#   enabled   master switch — the whole block is inert unless true
+#             (default false)
+#   roots     directories to scan, resolved from the PROJECT ROOT — the
+#             parent of the cans/ workspace (the same convention as
+#             references.external_roots). "." names the whole project.
+#             The workspace itself is ALWAYS skipped: corpus refs verify
+#             in the refs engine, never twice. (default ["."])
+#   include   globs deciding which files join the scan, matched against
+#             the project-root-relative /-separated path in the
+#             core/glob.ts grammar: * any run except / (stays inside one
+#             segment), ** any run including / (crosses segments),
+#             ? exactly one character, [abc] a character class, \X the
+#             literal X; case-sensitive, anchored to the WHOLE path.
+#             Default — the RFC §3 code-extension set:
+#               **/*.rs   **/*.ts   **/*.js   **/*.py
+#               **/*.go   **/*.c    **/*.cpp
+#             (this block is YAML, so the double-star globs above are safe
+#             to spell verbatim here — a TS block comment cannot hold them,
+#             the `**/` star-slash would close it. Quote globs in VALUES:
+#             a YAML plain scalar cannot start with `*`.)
+#   exclude   globs matched AFTER include; a file matching any exclude
+#             never joins the scan. Default — the RFC §3 build-artifact
+#             set, at any depth:
+#               **/target/**   **/node_modules/**
+#               **/.git/**     **/dist/**
+#   severity  error | warning — the band codebase findings emit at:
+#             error fails the run (exit 2 — the CI gate), warning is
+#             advisory (exit 1 band). (default error)
+#
+# Validation semantics (what makes a pointer broken):
+#   - files are scanned purely as text — no ASTs, no toolchains, no
+#     language runtimes. A pointer is `see: <file>[#<slug>]` embedded in
+#     any surrounding text: leading prose, trailing notes, parentheses,
+#     block comments and YAML keys are all invisible to the match, and
+#     trailing prose after the pointer never fails it.
+#   - a `.md` target resolves against the corpus keys (the spec files
+#     the workspace loaded): exact match, else one optional leading
+#     `cans/` is stripped — `01-auth.md` and `cans/01-auth.md` are the
+#     same target. No match → reason `FileNotFound`.
+#   - a target may also name an ARTIFACT file (issue #69) — any
+#     extension the artifact anchor machinery can address:
+#     `.json`/`.yaml`/`.yml`/`.toml` (schematic dot paths, issue #58),
+#     `.txt`/`.text` (section headings) and code files' top-level
+#     symbols (`.ts`/`.rs`/`.py`/`.go` and friends, issue #60).
+#     Artifact targets resolve against the WORKSPACE filesystem: the
+#     file must exist under cans/ (containment — `../` and absolute
+#     spellings never resolve) and the anchor validates against that
+#     file's addressable vocabulary, the same verdict path the corpus
+#     refs engine uses. A missing file → reason `FileNotFound`; a
+#     broken, ambiguous or unparseable anchor → reason `AnchorNotFound`
+#     with the why in the message; an artifact with nothing addressable
+#     carrying an anchor is a warning (`codebase.anchor.no-target`),
+#     never a finding. A file type no vocabulary can address (`.c`,
+#     `.cpp`, `.csv`) is deliberately not a pointer target — the
+#     extension table is the grammar's over-capture guard. The scan
+#     itself still never enters the workspace: an artifact file is
+#     read and parsed only when a pointer carries an anchor into it
+#     (a file-level artifact pointer verifies existence and nothing
+#     more) — artifact files are resolution inputs, never scan
+#     inputs.
+#   - issue #70 widens those vocabularies with a LEAF tier, through the
+#     same shared verdict path: every identifier a code target references
+#     (declaration, import, use, call site, comment text alike) and every
+#     word token of a `.txt`/`.text` tree/box/diagram entry is addressable
+#     — a pointer to an example means "this file demonstrates the symbol",
+#     a pointer into a diagram means "this entry of the diagram" — and
+#     the Rust grammar mints column-0 declarations regardless of `pub`
+#     plus trait-block methods (impl methods and `pub(crate)`/`pub(super)`
+#     still never mint). Over-extraction is fail-safe: an extra name can
+#     only turn a would-be error into a hit, never mask a real miss. The
+#     no-target advisory fires only for a target with nothing addressable
+#     at all (an empty .txt).
+#   - issue #71 widens the `.txt`/`.text` vocabularies with an ENTRY tier,
+#     between the heading tier and the #70 leaf tier and through the same
+#     shared verdict path: every physical line of a `.txt`/`.text` target
+#     mints as a whole-line entry — leading Unicode box-drawing/tree
+#     decoration stripped, one outermost `[`…`]` bracket pair stripped
+#     when it is the only one, lines with <2 chars or no letters never
+#     mint — so a multi-word hyphenated PHRASE anchor resolves where it
+#     used to read `no node matches` (`#Kernel-seccomp-unotify-triggers`
+#     at the line `Kernel seccomp-unotify triggers`,
+#     `#USERSPACE-SMOLTCP-INGRESS-RING` at `[USERSPACE SMOLTCP INGRESS
+#     RING]`): a pointer into a diagram means "this entry of the
+#     diagram", the entry being the whole line, and #70's single-token
+#     anchors keep working. The no-target advisory's message enumeration
+#     gains the seventh vocabulary — the verbatim list is (bullets,
+#     schematic key paths, text headings, text entries, code symbols,
+#     referenced names, text tokens). Everything else (broken-anchor
+#     messages, suggestions, exit ladder, wire shape) is unchanged.
+#   - issue #72 widens the ENTRY tier for bracketed entries that SHARE
+#     their line with other bracketed groups, through the same shared
+#     verdict path: the whole cleaned line keeps minting verbatim (the
+#     #71 rule, unchanged — the widening never narrows) and each maximal
+#     flat bracketed group on the line mints its trimmed interior as its
+#     OWN entry, left-to-right under the same guards (`[]`, `[5]`, `[x]`
+#     never mint) — so `#USERSPACE-SMOLTCP-INGRESS-RING` resolves at the
+#     shared line `[USERSPACE SMOLTCP INGRESS RING] [on_net_outbound]
+#     [on_net_inbound]` through the group entry, and `#FOO-BAR-BAZ` at
+#     `[FOO BAR BAZ] [other one]`, while single-token and single-pair
+#     anchors (`#SOLO-ENTRY-HERE` at a lone `[SOLO ENTRY HERE]`) keep
+#     working. No new vocabulary type — the entry tier mints more
+#     entries — so the seven-vocabulary message and every other contract
+#     above stand unchanged.
+#   - #<slug> resolves with the SAME tolerant anchor matching the corpus
+#     refs engine uses (case- and separator-insensitive; the `slug:`
+#     algorithm at the top of this file is the canonical spelling — and
+#     the anchor may carry that FULL alphabet: `(`, `,`, `:`, `/`, `^`
+#     are legal mid-anchor, and a node title ending in `: see: <target>`
+#     resolves by its bare title — issue #67). Anchor and heading
+#     compare like-with-like (issue #68): both sides get the
+#     trailing-punctuation cleaning pass — glued prose punctuation
+#     ignored, the heading's own slug-preserved trailing punctuation
+#     tolerated on either side. Never fuzzy — a near miss earns a
+#     `did you mean` suggestion, resolution never auto-heals.
+#     No match → reason `AnchorNotFound`.
+#
+# Wire shape (--json, additive — plain-check JSON stays byte-identical to
+# the pre-#66 shape; present only when the phase ran, flag or config):
+#   codebase:
+#     scanned: 5            # files scanned
+#     pointers: 10          # pointers extracted
+#     broken: 2             # findings
+#     issues:               # every broken pointer, exactly:
+#       - type: CodebaseBrokenReference
+#         file: src/api/routes.ts
+#         line: 3
+#         raw: see: 03-storage.md#Qutas
+#         targetFile: 03-storage.md
+#         targetSlug: Qutas
+#         reason: AnchorNotFound
+#   Each issue ALSO rides sections.refs as rule codebase.broken_reference
+#   at the configured severity band, counted in error/warningCount like
+#   every finding.
+#
+# Reverse traceability: `cans refs "01-auth.md#Sessions" --codebase` lists
+# every scanned source file pointing at that node (file, line, the line
+# text as written), exit 0 whether or not matches exist. Artifact queries
+# are legal too (issue #69) — `cans refs "cans/artifacts/diagrams/
+# host-runtime.txt#driver-avf" --codebase` — the query grammar builds
+# from the same target-extension table as the pointer grammar, so the
+# two can never drift. Without
+# --codebase the command refuses with guidance (a flag that silently does
+# nothing is a typo hiding in plain sight).
+#
+# CI usage: the scanner is deterministic (same tree → same findings, in
+# the same order), so `severity: error` turns silent pointer rot into a
+# non-zero exit — wire `cans check --codebase` into CI and a renamed spec
+# node fails the build until the pointers follow it. The exit ladder is
+# the #41 contract, confirmed intended by #70: 0 clean · 1 warnings-only
+# (`ok` stays true — `--strict` flips `ok`, never the exit code) ·
+# 2 errors.
+#
+# codebase:
+#   enabled: true
+#   roots: ["."]
+#   include:
+#     - "**/*.rs"
+#     - "**/*.ts"
+#     - "**/*.js"
+#     - "**/*.py"
+#     - "**/*.go"
+#     - "**/*.c"
+#     - "**/*.cpp"
+#   exclude:
+#     - "**/target/**"
+#     - "**/node_modules/**"
+#     - "**/.git/**"
+#     - "**/dist/**"
+#   severity: error
