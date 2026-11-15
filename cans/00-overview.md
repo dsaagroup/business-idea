@@ -1,5 +1,19 @@
 - Overview
-  - Product: TBD
-  - Users: TBD
-  - Status: draft
-  - Programmes: see 07-indonesia-programmes.md#Indonesia-Programmes
+  - Purpose: Indonesia startup programmes knowledge base
+    - Scope: Indonesia programmes only
+      - Annual: Recurring programmes, not one-off events
+      - National: Open across Indonesia, some regional
+      - Verified: Names, organisers, sources checked 15 Nov 2026
+      - Programmes: see 07-indonesia-programmes.md#Indonesia-Programmes
+    - Focus: Competitions, incubation, acceleration
+    - Source: Web research, 15 Nov 2026, unverified prizes omitted
+  - Coverage: 50 programmes in 5 groups, 10 each
+    - Government: 10 programmes, Komdigi to IDX
+    - Corporate: 10 programmes, banks to telcos
+    - University: 10 programmes, UGM to Telkom University
+    - Incubators: 10 programmes, Antler to PINTU
+    - Community: 10 programmes, Tech in Asia to ASTA
+  - Use: Find a programme, check eligibility, verify source
+    - Find a programme by group first
+    - Check eligibility before applying
+    - Verify prize and deadline on source page
