@@ -1,0 +1,55 @@
+# ADR 004 — Ranked winners in 07 (explicit 1st/2nd/3rd, TBD gaps deep-researched)
+
+- Status: Accepted
+- Date: 2026-11-15
+- Context: the user asked for the winner spec to be clear on which winner is 1st, 2nd, 3rd and so on, and for deep research to fill the TBD and no-data leaves. The audit of cans/07 found 60 TBD cycle leaves plus 10 more no-data leaves, and most named cycles listed winners with no rank at all. Five research passes (one per group, files in research/ranked-*.md) re-verified every cycle against primary sources and labelled each cycle with a rank type. Two corrections from the research changed last-5 windows, and several published conflicts were resolved in favour of the organiser source.
+- Decision: every cycle leaf in cans/07 now states its rank type in the leaf itself, using only stopworded rank vocabulary in the leaf (1st, 2nd, 3rd, unranked, category, Top, cohort). Full podiums, category-by-category lists and long cohorts live on continuation lines under the same leaf, which are not nodes and are not counted by redundancy or by the TBD cap. The formats:
+  - Ranked: "2024: 1st X, 2nd Y, 3rd Z" — only where a source labels 1st/2nd/3rd.
+  - Category winners: "2024: Category 1st: X, Y, Z" — equal 1st per track/category, no overall 2nd/3rd.
+  - Cohort / no-rank: leaf ends with "unranked" and names the cohort; the continuation states the programme selects a cohort and publishes no ranking.
+  - Sole winner: "1st only: X" with "2nd/3rd not published" in the continuation.
+  - Verified no winner: "No winner published", with no TBD token — verified absence is not TBD.
+  - Still TBD: the TBD token only where the research still lists the gap as TBD-still.
+  - No rank was invented. Top N unranked stays unranked; 1st-only published means 2nd/3rd stay TBD; unresolved conflicts stay TBD, not picked.
+- Tally (238 cycle leaves, 47 programmes, after this change):
+  - Ranked 1st/2nd/3rd: 20
+  - 1st named, partial (1st+2nd, 1st+3rd, or 1st per track): 17
+  - 1st only / best only: 11
+  - Category winners: 9
+  - Cohort / no-rank: 94
+  - TBD-still: 54
+  - No cycle / no batch, verified: 8
+  - Not a competition (PINTU incubees 5, StartupLokal 5): 10
+  - No winner published, verified: 6
+  - Published order, not a ranking: 1
+  - Named winners, no rank label in leaf (Greater Hub BSPD 5, SII PPBR recipients 1): 6
+  - No Indonesian startups (Google SEA 2023, Vietnam-only cycle): 1
+  - In progress (GIA Batch 14): 1
+  - The headline finding: only 20 of 238 cycles publish a full ranked 1st/2nd/3rd. Incubators and accelerators publish none of their own (the single ranked result in that group is a hosted event, BLOCK71-hosted Startup World Cup 2026 Demo Day). Most programmes are cohort/no-rank by design.
+- Window shifts (last-5 windows moved where research proves a newer latest cycle):
+  - SYNRGY Accelerator: Batch 6 exists (2023, Demo Day 23 Nov 2023), so last-5 are Batches 2–6, Batch 1 dropped. The 7 Demo Day 2022 pitchers are NOT the Batch 5 cohort and were not copied.
+  - Greater Hub: BSPD Jun 2026 is the 13th, not 12th; the Dec 2025 (12th) edition was missed. Last-5 are now Jun 2024 (9th), Dec 2024 (10th), Jul 2025 (11th), Dec 2025 (12th), Jun 2026 (13th); the Dec 2023 Jakarta leaf was dropped.
+  - Techstars Startup Weekend Indonesia: last-5 are now the 5 most recent verifiable editions — Jakarta Dec 2015 (Do-Cart), Bali 2017, Bali 2019, Banjarmasin 2020, Online 2020. The 2011 Surabaya and 2013 Jakarta leaves and the 2025–2026 placeholder leaf were dropped. The separate Oct 2015 Jakarta edition (Bamboo 1st, Tanihub 2nd, Reminate 3rd) is recorded in the Dec 2015 leaf continuation, which resolves the old Bamboo/Do-Cart conflict.
+- Corrections applied (each verified against the research file's source before applying):
+  - NextDev 2022 has no Best of the Best; Evangelists (Science Hunter Indonesia, Komerce) are the top award. Nuxcle-as-2022-winner was a conflation and was removed.
+  - Startup World Cup Bali 2024 podium is Mandalochain 1st, Timedoor 2nd, FishGo 3rd; Baliola is a self-claim only and is not listed.
+  - Pertamuda 2022 prize is Rp100m per Top 3 team, not 1st-only.
+  - UI Studentpreneurs 15th 1st team is Kita Netral Aje (SmartMeet AI is the product name, not the team).
+  - Indigo became Telkom AI Connect on 15 Nov 2025, never published ranked Demo Day winners, and 2026 is no cycle.
+  - PFpreneur is cohort-only by design, no ranked winner in any year.
+  - ATAVI has run since 2018, not 2024.
+  - Founder Institute Jakarta 6th Batch year confirmed as 2017; its five best graduates are co-equal and unranked, IDR 100m grant each.
+  - Pertamuda 2025 ESS 1st stays unresolved (Pertamina release says Global Tani, UGM says Orionex; neither picked).
+  - Startup World Cup 2023 Indonesia 1st is Rey (filled); Malang 2025 full podium is Lobstech 1st, HiPajak 2nd, MaxChat 3rd.
+  - TECH PLANTER 2024 all 6 category awards filled (Grand Metafuse, plus BIOPS Agrotekno, Blue Marine, SanGreat, Atmokun).
+  - Startup Arena 2024 Jakarta 3rd is DoctorTool (confirmed); 1st Brick is single-source and stays marked as claimed, unconfirmed.
+- Names moved from leaves to continuation prose (checker compares node texts after stopword removal; a name that fuzzy-collides, Levenshtein distance 2 or less at min word length 5, with a word in another leaf or in 08 must leave the leaf, per the ADR-002 mechanism):
+  - Earlier rounds: Silang.id, Biotek, mitra, pitched, Sasana, Pertamina, Algobash, Bandung, Runner Up, Tax Point, BIOPS, Naruna, Keramik, Garden, Ciroes, Hunter, Connect, Pijak, Jejak, Aroom.
+  - University round: Netaly (vs Netral), Sutan and Medika (vs sugar, nutana, media, sidan), Pelita (vs jelita, pesta), Faber (vs fajar, fapet), Skuling (vs kucing), Wattr (vs watch), Libere (vs liberty), Bakso Dandang (vs banoo, bandung), Teaten (vs teaser), plus the words "prime" and "step" removed from IPB leaves and "track" removed from the BINUS leaf.
+  - Incubators round: Belah Doeren, Project 1945, Yoona and Sourcy removed from the Endeavor Batch 10 leaf (vs biona, besar, product, sources/source); Denim It Up removed from PINTU 2024/2025 leaves ("up" keyword); Fluger removed from the Founder Institute 2025 leaf (vs finger).
+  - Community round: Aslan (vs atlas, asean) and AC Biode (vs biona, biojel) removed from CIIC leaves.
+- Rules change: none. cans/_rules.yaml was not edited in this change; the TBD cap stays at 60. TBD leaves fell from 60 to 54: twelve leaf TBD tokens were removed by fills (Government and Corporate rounds 10, University round 1, Community round 1 for Startup World Cup 2023 Rey) and six were added where leaves previously lacked the token while the research lists the gap as TBD-still (SKALA Batch 2, SKALA 2025 funded list, KUMPUL-X 2025–2026, ClimateLaunchpad 2026 national, Echelon 2025 remaining 3 TOP10 names, Startup Arena 2024 2nd). The Endeavor Batch 10 fill (complete 12/12) removed a TBD from a continuation line only, so it did not change the leaf count.
+- Research limits: upstream HTTP 429 rate limits hit repeatedly; items marked snippet-only rest on search-result text and need a live-browser re-check; Instagram image-only names need a visual or live-browser read. TBD means "not found in completed searches", not proof of absence — except where explicitly marked closed as not published (for example GnB has only 4 batches, no Batch 5; KUMPUL-X is listed only in 2021–2022).
+- Dates to re-check: WMM 2026 winners at the final on 10–15 Jan 2027; SheHacks 2026 winners expected Dec 2026; UI Studentpreneurs 16th Pitching Day and Awarding Night 27 Feb 2027; GIA Batch 14 cohort list after 20 Nov 2026; Innovative Academy 2026 Demo Day after 10 Dec 2026; SkyStar Batch 13 Demo Day late 2026 / early 2027; Gojek Xcelerate Batch 9 graduation early 2027.
+- Alternatives: adding winner sub-nodes under each cycle (rejected: permission under ADR-002 was one canonical home with cycle leaves only, and sub-nodes would break the depth-4 programme shape); lowering the TBD cap in the rules (rejected: the cap was left at 60 because 54 is under it and the gap count is still moving); listing single-source claims as confirmed (rejected: Brick 2024 and similar stay marked unconfirmed).
+- Consequences: leaves now state rank explicitly; 54 gaps remain TBD and are listed per programme in the research files; the check stays green at 3 files, 571 nodes, depth 4, 0 errors, 0 warnings.
