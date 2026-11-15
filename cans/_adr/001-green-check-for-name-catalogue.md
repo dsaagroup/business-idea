@@ -1,9 +1,10 @@
 # ADR-001: green-check-for-name-catalogue
 
-- Status: accepted
+- Status: superseded
 - Date: 2026-11-15
 - Decided by: dsaa, on user request for a green `cans check`
 - Supersedes: none
+- Superseded by: 002-structural-green-check.md, on 2026-11-15, because the user rejected config tuning
 
 - Context
   - The cans corpus is a name catalogue, not a software spec: 47 programmes, 1,227 nodes, mostly proper nouns (startup names, organisers) and honest TBDs

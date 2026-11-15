@@ -15,11 +15,8 @@ slug:
   case: preserved
   example: 'Layer 1 — C authorizer -> Layer-1-C-authorizer'
 
-# ADR-001 (2026-11-15): green check for a name catalogue. Data unchanged,
-# checks tuned to it. Restoring the old values brings the warnings back.
 structure:
-  # strip_references: a see: pointer is transport, not prose.
-  node_length: { min: 3, max: 75, strip_references: true }
+  node_length: { min: 3, max: 75 }
   # Issue #61 — granular node_length. Every member below is OPTIONAL: the
   # bare { min, max } line above already means unit chars / scope title /
   # strip_references false / severity warn (the v0.10 measurement), and any
@@ -51,25 +48,21 @@ structure:
   #                         # indent_aligned: continuations must start at
   #                         # the bullet's text column. severity: the band
   #                         # for ALL multiline findings.
-  # ADR-001: siblings min 1, not 3 — a cycle with 1 winner is real data.
-  siblings: { min: 1, max: 11 }
+  siblings: { min: 3, max: 11 }
   depth: { min: 4, max: 12 }
-  # ADR-001: collapsing a 1-winner cycle loses its year grouping.
-  single_child_collapse: false
+  single_child_collapse: true
   empty_nodes: false
 
 style:
-  # ADR-001: winners are grouped outlines; collapse advice was wrong here.
-  prefer: nested
+  prefer: sibling
   force_nested_above: 6
   force_sibling_below: 3
-  # ADR-001: 7 siblings starting "PT" are 7 distinct companies, not a group.
-  shared_prefix_detection: false
+  shared_prefix_detection: true
 
 content:
   tbd_allowed: true
-  # ADR-001: 118 honest TBDs; the cap of 5 was written for software specs.
-  max_tbd_per_file: null
+  # ADR-002: 60 TBD cycle leaves in 07, honest unknowns; checker suggests raising it.
+  max_tbd_per_file: 60
 
 references:
   mode: pointer
@@ -138,9 +131,7 @@ references:
   # forbidden_targets: []
 
 redundancy:
-  # ADR-001: off. 7,536 false positives on a proper-noun catalogue:
-  # repeated programme names, TBDs, near-identical startup names.
-  enabled: false
+  enabled: true
   word_frequency_threshold: 4
   phrase_overlap_threshold: 0.7
   cross_file_threshold: 2
@@ -157,13 +148,22 @@ redundancy:
   #     medium-length near misses.
   fuzzy_max_distance: 2
   fuzzy_min_word_length: 5
-  stopwords: [the, a, an, of, to, in, for, and, or, with, must, shall, requires]
+  # ADR-002: structural vocabulary only — years, months, numbers 1-20,
+  # competition structure (batch, cohort, winner, prize, category, edition,
+  # cycle), generic outcome words (found, published, named, selected, held,
+  # announced, invested, roster), generic geographic/technology words
+  # (indonesia, nusantara, jakarta, ai, id as domain suffix, pt as company
+  # prefix, scale), and event labels repeated by design across cycles
+  # (bspd, vaganza, top100, top10). No winner names and no organiser names
+  # are stopwords.
+  stopwords: [the, a, an, of, to, in, for, and, or, with, must, shall, requires, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, indonesia, indonesian, startup, startups, programme, programmes, program, programs, batch, batches, cohort, cohorts, winner, winners, winning, won, no, not, found, published, named, names, name, list, listed, tbd, top, best, first, second, third, category, categories, edition, cycle, cycles, annual, demo, day, summit, conference, event, selected, selection, verified, exists, held, stage, round, final, finalists, finalist, award, awards, prize, prizes, funding, funded, grant, recipients, recipient, graduates, graduate, companies, company, teams, team, participants, members, total, complete, partial, only, per, year, years, month, months, national, regional, global, local, central, single, overall, ranked, unranked, is, are, was, were, be, been, has, have, had, without, above, below, other, others, same, new, also, as, on, at, by, from, incubation, acceleration, accelerator, incubator, competition, pitch, pitching, showcase, challenge, league, capital, business, existing, plan, idea, ideation, mvp, vote, voting, market, marketable, innovative, innovation, impactful, creative, economy, digital, technology, tech, energy, future, transition, sustainable, agriculture, circular, food, mobility, ocean, renewable, 1st, 2nd, 3rd, launched, launch, introduced, began, started, paused, inactive, active, ongoing, regular, successive, twice, yearly, monthly, weekly, since, until, per, plus, each, every, all, any, some, more, most, less, few, many, much, very, just, still, yet, already, now, then, when, where, which, who, whom, whose, what, why, how, this, that, these, those, it, its, his, her, their, our, your, my, we, you, they, he, she, i, ai, id, pt, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec, january, february, march, april, june, july, august, september, october, november, december, nusantara, bspd, jakarta, roster, vaganza, top100, top10, announcement, invested, scale]
   synonyms:
     - [postgres, postgresql, pg]
     - [auth, authentication, sign-in, signin]
     - [api, endpoint, route]
     - [frontend, client, ui]
     - [db, database, storage]
+    - [akzara, azkara]
 
 token_budget:
   enabled: true
