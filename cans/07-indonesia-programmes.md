@@ -5,244 +5,291 @@
       - Open to: Indonesian founders, early-stage startups
       - Offers: Ignition, workshops, hacksprint, bootcamp
       - Cycle: Annual
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Gerakan-Nasional-1000-Startup-Digital
     - Startup Studio Indonesia
       - Organizer: Komdigi
       - Open to: Early-stage startups, 6+ months traction
       - Offers: 12-week accelerator, mentoring, investor access
       - Cycle: Batches, annual programme
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Startup-Studio-Indonesia
     - HUB.ID Accelerator
       - Organizer: Komdigi
       - Open to: Post-seed startups
       - Offers: Mentoring, investor and corporate matchmaking
       - Cycle: Annual summit
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#HUB.ID-Accelerator
     - Startup4Industry
       - Organizer: Ministry of Industry
       - Open to: Tech startups with a real product, 1+ year
       - Offers: Competition plus project funding for finalists
       - Cycle: Annual since 2018
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Startup4Industry
     - Pertamuda Seed and Scale
       - Organizer: Pertamina
       - Open to: University students, early-stage startups
       - Offers: Competition, mentoring, development funding
       - Cycle: Annual since 2021
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Pertamuda-Seed-and-Scale
     - PFpreneur
       - Organizer: Pertamina Foundation
       - Open to: Women 18+, business running 6+ months
       - Offers: Training, mentoring, UMK Academy progression
       - Cycle: Annual since 2020
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#PFpreneur
     - Startup Inovasi Indonesia
       - Organizer: BRIN
       - Open to: Research-based technology startups
       - Offers: Mentoring up to 6 months, funding support
       - Cycle: Successive batches
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Startup-Inovasi-Indonesia
     - BEKUP
       - Organizer: Ministry of Creative Economy, KUMPUL
       - Open to: Early-stage digital and creative startups
       - Offers: Mentoring, acceleration, global scale-up track
       - Cycle: Annual since 2016
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#BEKUP
     - IDX Incubator
       - Organizer: Indonesia Stock Exchange
       - Open to: Startups and SMEs
       - Offers: 24-26 week incubation, Road to IPO
       - Cycle: Batches, annual intake
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#IDX-Incubator
   - Corporate and bank programmes
     - Wirausaha Muda Mandiri
       - Organizer: Bank Mandiri
       - Open to: Entrepreneurs 18-35, business 1+ year
       - Offers: Prizes, learning, network, financing access
       - Cycle: Annual
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Wirausaha-Muda-Mandiri
     - BRIncubator
       - Organizer: Bank Rakyat Indonesia, Rumah BUMN
       - Open to: MSMEs in food, fashion, home decor, craft
       - Offers: Training, mentoring, scaling, global exposure
       - Cycle: Annual intake
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#BRIncubator
     - NextDev
       - Organizer: Telkomsel
       - Open to: Technopreneurs solving social problems
       - Offers: Mentoring, grants, Academy and Summit stages
-      - Cycle: Annual, 12th edition 2026
+      - Cycle: Annual, 11th edition 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#NextDev
     - Indigo
       - Organizer: Telkom Indonesia
       - Open to: Digital startups, early-stage to growth
       - Offers: Incubation, mentoring, coworking, demo days
       - Cycle: Ongoing cohorts, since 2013
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Indigo
     - Telkomsel Innovation Center
       - Organizer: Telkomsel Ventures
       - Open to: Digital startups, seed to Series A
       - Offers: 14-16 week proof-of-concept, pilot projects
       - Cycle: Batches, Batch 11 in 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Telkomsel-Innovation-Center
     - Grab Ventures Velocity
       - Organizer: Grab Indonesia, Endeavor Indonesia
       - Open to: Post-seed startups, legally registered PT
       - Offers: Mentoring, Grab pilot, investor pitching
       - Cycle: Batches, Batch 9 in 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Grab-Ventures-Velocity
     - SheHacks
       - Organizer: Indosat Ooredoo Hutchison
       - Open to: Women entrepreneurs and women-led MSMEs
       - Offers: 6-month learning, mentoring, pitch showcase
       - Cycle: Annual, 7th year 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#SheHacks
     - X-Camp
       - Organizer: XL Axiata, now XLSMART
       - Open to: IoT and AI startups, developers, students
       - Offers: Open lab, testbed, incubation, collaboration
       - Cycle: Ongoing since 2018
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#X-Camp
     - SYNRGY Accelerator
       - Organizer: Bank Central Asia, Digitaraya
       - Open to: Fintech startups
       - Offers: 3-month accelerator, BCA collaboration
-      - Cycle: Batches, paused after 2020
-      - Status: Flagged, no batch found after 2020
+      - Cycle: Batches 1-5, 2019-2022
+      - Status: No batch found after 2022
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#SYNRGY-Accelerator
     - Gojek Xcelerate
       - Organizer: Gojek, Digitaraya
       - Open to: Startups for Gojek ecosystem collaboration
       - Offers: 6-month acceleration, mentoring, market access
-      - Cycle: Batches, paused after 2020-2021
-      - Status: Flagged, no batch found after 2020-2021
+      - Cycle: Batches 1-4, 2019-2020
+      - Status: No 5th batch, 35 startups in 4 batches
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Gojek-Xcelerate
   - University programmes
     - Innovative Academy
       - Organizer: Universitas Gadjah Mada
       - Open to: UGM students, staff, alumni, public teams
       - Offers: Pre-incubation, incubation, acceleration
       - Cycle: Twice yearly pre-incubation
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Innovative-Academy
     - SkyStar Ventures
       - Organizer: Universitas Multimedia Nusantara
       - Open to: Early-stage startups, student founders
       - Offers: 20-26 week mentoring, workshops, matching
       - Cycle: Batches, Batch 13 in 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#SkyStar-Ventures
     - BINUS Incubator
       - Organizer: Bina Nusantara University
       - Open to: BINUS student and alumni startups
       - Offers: Coaching, mentoring, exhibitions, funding access
       - Cycle: Ongoing, annual events
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#BINUS-Incubator
     - The Greater Hub
       - Organizer: SBM ITB
       - Open to: Early-stage startups and SMEs
       - Offers: Workshops, mentoring, networking, funding access
       - Cycle: Twice yearly, 2 batches per year
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#The-Greater-Hub
     - PRIME STeP
       - Organizer: ITB, IPB, UI, funded by ADB
       - Open to: Research startups, TRL 7-9, ready to sell
       - Offers: 12-16 week incubation, market validation
       - Cycle: Annual, runs to 2027
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#PRIME-STeP
     - UI Studentpreneurs
       - Organizer: BEM FEB Universitas Indonesia
       - Open to: University students, teams of 1-3
       - Offers: Business Model Canvas competition, mentoring
       - Cycle: Annual, 16th year 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#UI-Studentpreneurs
     - IPB Business Incubation Program
       - Organizer: IPB University, LKST
       - Open to: IPB students, alumni, agri-food startups
       - Offers: Mentoring, seed grants, prototyping, workspace
       - Cycle: Annual selection
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#IPB-Business-Incubation-Program
     - ITS Youth Technopreneur
       - Organizer: Institut Teknologi Sepuluh Nopember
       - Open to: Active ITS undergraduate student founders
       - Offers: Funding, mentorship, academic credit
       - Cycle: Annual
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#ITS-Youth-Technopreneur
     - ATAVI
       - Organizer: Universitas Airlangga, PASINBIS
       - Open to: UNAIR students, staff, alumni ventures
       - Offers: 6-month incubation, training, mentoring
       - Cycle: Batches, Batch 2 in 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#ATAVI
     - Bandung Techno Park Incubation
       - Organizer: Telkom University, Bandung Techno Park
       - Open to: Telkom University members and public startups
       - Offers: Mentoring, investor networks, coworking
       - Cycle: Batches, Batch 23 in 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Bandung-Techno-Park-Incubation
   - Incubators and accelerators
     - Antler Residency Indonesia
       - Organizer: Antler
       - Open to: Aspiring founders, no idea required
       - Offers: 10-week residency, co-founder matching
       - Cycle: Year-round cohorts
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Antler-Residency-Indonesia
     - Scale Up by Endeavor
       - Organizer: Endeavor Indonesia
       - Open to: High-growth startups, post product-market fit
       - Offers: Mentoring, peer learning, fundraising support
       - Cycle: Batches, Batch 10 in 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Scale-Up-by-Endeavor
     - GK-Plug and Play Indonesia
       - Organizer: Plug and Play APAC, GIA Jakarta
       - Open to: Early-stage tech startups
       - Offers: 12-week accelerator, workshops, VC access
       - Cycle: Batches, Batch 12 and 14 in 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#GK-Plug-and-Play-Indonesia
     - SKALA Accelerator
       - Organizer: Innovation Factory, Salim Group
       - Open to: Early-stage pre-seed startups, Indonesia, SEA
       - Offers: 8-12 weeks, mentoring, VC matchmaking
       - Cycle: Ongoing cohorts
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#SKALA-Accelerator
     - BLOCK71 Indonesia
       - Organizer: NUS Enterprise, Innovation Factory
       - Open to: Early-stage tech startups, pre-seed to Series A
       - Offers: Incubation, acceleration, market access
       - Cycle: Ongoing, since 2017
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#BLOCK71-Indonesia
     - Google for Startups Accelerator SEA
       - Organizer: Google, supported by Komdigi
       - Open to: Indonesia AI startups, seed to Series B
       - Offers: 3-month equity-free programme, Google mentors
       - Cycle: Cohorts, 2025 and 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Google-for-Startups-Accelerator-SEA
     - Founder Institute Jakarta
       - Organizer: Founder Institute, Foundry Collective
       - Open to: Idea-stage and pre-seed founders
       - Offers: 10-week programme, sprints, Demo Day
       - Cycle: Regular cohorts
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Founder-Institute-Jakarta
     - PINTU Incubator
       - Organizer: JF3, LAKON Indonesia, French Embassy
       - Open to: Young Indonesian fashion designers, brands
       - Offers: 4-month incubation, 39 sessions, buyer access
       - Cycle: Annual, 5th year 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#PINTU-Incubator
     - KUMPUL-X Accelerator
       - Organizer: KUMPUL
       - Open to: Indonesian startups, seed to pre-Series A
       - Offers: Scale-up mentoring, business matching
       - Cycle: Batches, paused, no 2024-2026 cohort
       - Status: Flagged, no 2024-2026 cohort verified
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#KUMPUL-X-Accelerator
     - GnB Accelerator
       - Organizer: Fenox Venture Capital, Infocom
       - Open to: Early-stage mobile, IoT, consumer startups
       - Offers: 3-month programme, investment, Demo Day
       - Cycle: Batches, paused after 2018
       - Status: Flagged, no batch found after 2018
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#GnB-Accelerator
   - Community and private competitions
     - Startup Arena Pitch Battle
       - Organizer: Tech in Asia
       - Open to: Early-stage founders and startups
       - Offers: Pitch at Tech in Asia Conference Jakarta
       - Cycle: Annual conference
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Startup-Arena-Pitch-Battle
     - Startup World Cup Indonesia
       - Organizer: Pegasus Tech Ventures, SKALA
       - Open to: Indonesia PT startups, revenue-generating
       - Offers: Regional pitch, US final for $1m investment
       - Cycle: Annual regional rounds
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Startup-World-Cup-Indonesia
     - ClimateLaunchpad Indonesia
       - Organizer: EIT Climate-KIC, Further
       - Open to: Early-stage founders, green climate ideas
       - Offers: Bootcamp, mentoring, national and global finals
       - Cycle: Annual
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#ClimateLaunchpad-Indonesia
     - Climate Impact Innovations Challenge
       - Organizer: East Ventures, Temasek Foundation, Tencent
       - Open to: Climate tech with pilot or MVP, Indonesia-ready
       - Offers: Catalytic funding to pilot in Indonesia
       - Cycle: Annual, 4th edition 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Climate-Impact-Innovations-Challenge
     - TECH PLANTER Indonesia
       - Organizer: Leave a Nest Malaysia
       - Open to: Early-stage deep-tech startups, researchers
       - Offers: Demo Day pitching, corporate and investor access
       - Cycle: Annual, 9th year 2026
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#TECH-PLANTER-Indonesia
     - Techstars Startup Weekend Indonesia
       - Organizer: Techstars, local organisers
       - Open to: Aspiring entrepreneurs, technical and other
       - Offers: 54-hour event, pitch, team, build, final pitch
       - Cycle: Local editions, recurring
       - Status: Flagged, no central 2025-2026 edition verified
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Techstars-Startup-Weekend-Indonesia
     - StartupLokal
       - Organizer: Community, Natali Ardianto, Nuniek Tirta
       - Open to: Indonesian startup founders, enthusiasts
       - Offers: Monthly meetups, talks, networking
       - Cycle: Monthly meetups, since 2010
       - Status: Flagged, community meetup, not a competition
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#StartupLokal
     - Echelon TOP100
       - Organizer: e27
       - Open to: Southeast Asian startups, including Indonesian
       - Offers: TOP100 pitching at Echelon Asia Summit
       - Cycle: Annual summit, regional
       - Status: Flagged, Indonesia satellite last in 2014
+      - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Echelon-TOP100

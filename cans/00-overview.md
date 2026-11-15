@@ -4,7 +4,7 @@
       - Annual: Recurring programmes, not one-off events
       - National: Open across Indonesia, some regional
       - Verified: Names, organisers, sources checked 15 Nov 2026
-      - Programmes: see 07-indonesia-programmes.md#Indonesia-Programmes
+      - Programmes: 07-indonesia-programmes.md
     - Focus: Competitions, incubation, acceleration
     - Source: Web research, 15 Nov 2026, unverified prizes omitted
   - Coverage: 47 programmes in 5 groups
@@ -13,6 +13,7 @@
     - University: 10 programmes, UGM to Telkom University
     - Incubators: 10 programmes, Antler to PINTU
     - Community: 8 programmes, Tech in Asia to Echelon
+    - Winners: see 08-indonesia-programme-winners.md#Indonesia-Programme-Winners
   - Use: Find a programme, check eligibility, verify source
     - Find a programme by group first
     - Check eligibility before applying
