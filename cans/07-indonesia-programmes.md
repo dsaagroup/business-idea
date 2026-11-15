@@ -1,0 +1,215 @@
+- Indonesia Programmes
+  - Government and state programmes
+    - Gerakan Nasional 1000 Startup Digital
+      - Organizer: Komdigi
+      - Open to: Indonesian founders, early-stage startups
+      - Offers: Ignition, workshops, hacksprint, bootcamp
+    - Startup Studio Indonesia
+      - Organizer: Komdigi
+      - Open to: Early-stage startups, 6+ months traction
+      - Offers: 12-week accelerator, mentoring, investor access
+    - HUB.ID Accelerator
+      - Organizer: Komdigi
+      - Open to: Post-seed startups
+      - Offers: Mentoring, investor and corporate matchmaking
+    - Startup4Industry
+      - Organizer: Ministry of Industry
+      - Open to: Tech startups with a real product, 1+ year
+      - Offers: Competition plus project funding for finalists
+    - Pertamuda Seed and Scale
+      - Organizer: Pertamina
+      - Open to: University students, early-stage startups
+      - Offers: Competition, mentoring, development funding
+    - PFpreneur
+      - Organizer: Pertamina Foundation
+      - Open to: Women 18+, business running 6+ months
+      - Offers: Training, mentoring, UMK Academy progression
+    - Startup Inovasi Indonesia
+      - Organizer: BRIN
+      - Open to: Research-based technology startups
+      - Offers: Mentoring up to 6 months, funding support
+    - BEKUP
+      - Organizer: Ministry of Creative Economy, KUMPUL
+      - Open to: Early-stage digital and creative startups
+      - Offers: Mentoring, acceleration, global scale-up track
+    - IndoBisa
+      - Organizer: Ministry of Tourism and Creative Economy
+      - Open to: Tourism and creative-economy startups
+      - Offers: Investor matchmaking, fundraising bootcamp
+    - IDX Incubator
+      - Organizer: Indonesia Stock Exchange
+      - Open to: Startups and SMEs
+      - Offers: 24-26 week incubation, Road to IPO
+  - Corporate and bank programmes
+    - Wirausaha Muda Mandiri
+      - Organizer: Bank Mandiri
+      - Open to: Entrepreneurs 18-35, business 1+ year
+      - Offers: Prizes, learning, network, financing access
+    - BRIncubator
+      - Organizer: Bank Rakyat Indonesia, Rumah BUMN
+      - Open to: MSMEs in food, fashion, home decor, craft
+      - Offers: Training, mentoring, scaling, global exposure
+    - NextDev
+      - Organizer: Telkomsel
+      - Open to: Technopreneurs solving social problems
+      - Offers: Mentoring, grants, Academy and Summit stages
+    - Indigo
+      - Organizer: Telkom Indonesia
+      - Open to: Digital startups, early-stage to growth
+      - Offers: Incubation, mentoring, coworking, demo days
+    - Telkomsel Innovation Center
+      - Organizer: Telkomsel Ventures
+      - Open to: Digital startups, seed to Series A
+      - Offers: 14-16 week proof-of-concept, pilot projects
+    - Grab Ventures Velocity
+      - Organizer: Grab Indonesia, Endeavor Indonesia
+      - Open to: Post-seed startups, legally registered PT
+      - Offers: Mentoring, Grab pilot, investor pitching
+    - SheHacks
+      - Organizer: Indosat Ooredoo Hutchison
+      - Open to: Women entrepreneurs and women-led MSMEs
+      - Offers: 6-month learning, mentoring, pitch showcase
+    - X-Camp
+      - Organizer: XL Axiata, now XLSMART
+      - Open to: IoT and AI startups, developers, students
+      - Offers: Open lab, testbed, incubation, collaboration
+    - SYNRGY Accelerator
+      - Organizer: Bank Central Asia, Digitaraya
+      - Open to: Fintech startups
+      - Offers: 3-month accelerator, BCA collaboration
+      - Status: Flagged, no batch found after 2020
+    - Gojek Xcelerate
+      - Organizer: Gojek, Digitaraya
+      - Open to: Startups for Gojek ecosystem collaboration
+      - Offers: 6-month acceleration, mentoring, market access
+      - Status: Flagged, no batch found after 2020-2021
+  - University programmes
+    - Innovative Academy
+      - Organizer: Universitas Gadjah Mada
+      - Open to: UGM students, staff, alumni, public teams
+      - Offers: Pre-incubation, incubation, acceleration
+    - SkyStar Ventures
+      - Organizer: Universitas Multimedia Nusantara
+      - Open to: Early-stage startups, student founders
+      - Offers: 20-26 week mentoring, workshops, matching
+    - BINUS Incubator
+      - Organizer: Bina Nusantara University
+      - Open to: BINUS student and alumni startups
+      - Offers: Coaching, mentoring, exhibitions, funding access
+    - The Greater Hub
+      - Organizer: SBM ITB
+      - Open to: Early-stage startups and SMEs
+      - Offers: Workshops, mentoring, networking, funding access
+    - PRIME STeP
+      - Organizer: ITB, IPB, UI, funded by ADB
+      - Open to: Research startups, TRL 7-9, ready to sell
+      - Offers: 12-16 week incubation, market validation
+    - UI Studentpreneurs
+      - Organizer: BEM FEB Universitas Indonesia
+      - Open to: University students, teams of 1-3
+      - Offers: Business Model Canvas competition, mentoring
+    - IPB Business Incubation Program
+      - Organizer: IPB University, LKST
+      - Open to: IPB students, alumni, agri-food startups
+      - Offers: Mentoring, seed grants, prototyping, workspace
+    - ITS Youth Technopreneur
+      - Organizer: Institut Teknologi Sepuluh Nopember
+      - Open to: Active ITS undergraduate student founders
+      - Offers: Funding, mentorship, academic credit
+    - ATAVI
+      - Organizer: Universitas Airlangga, PASINBIS
+      - Open to: UNAIR students, staff, alumni ventures
+      - Offers: 6-month incubation, training, mentoring
+    - Bandung Techno Park Incubation
+      - Organizer: Telkom University, Bandung Techno Park
+      - Open to: Telkom University members and public startups
+      - Offers: Mentoring, investor networks, coworking
+  - Incubators and accelerators
+    - Antler Residency Indonesia
+      - Organizer: Antler
+      - Open to: Aspiring founders, no idea required
+      - Offers: 10-week residency, co-founder matching
+    - Scale Up by Endeavor
+      - Organizer: Endeavor Indonesia
+      - Open to: High-growth startups, post product-market fit
+      - Offers: Mentoring, peer learning, fundraising support
+    - GK-Plug and Play Indonesia
+      - Organizer: Plug and Play APAC, GIA Jakarta
+      - Open to: Early-stage tech startups
+      - Offers: 12-week accelerator, workshops, VC access
+    - SKALA Accelerator
+      - Organizer: Innovation Factory, Salim Group
+      - Open to: Early-stage pre-seed startups, Indonesia, SEA
+      - Offers: 8-12 weeks, mentoring, VC matchmaking
+    - BLOCK71 Indonesia
+      - Organizer: NUS Enterprise, Innovation Factory
+      - Open to: Early-stage tech startups, pre-seed to Series A
+      - Offers: Incubation, acceleration, market access
+    - Google for Startups Accelerator SEA
+      - Organizer: Google, supported by Komdigi
+      - Open to: Indonesia AI startups, seed to Series B
+      - Offers: 3-month equity-free programme, Google mentors
+    - Founder Institute Jakarta
+      - Organizer: Founder Institute, Foundry Collective
+      - Open to: Idea-stage and pre-seed founders
+      - Offers: 10-week programme, sprints, Demo Day
+    - PINTU Incubator
+      - Organizer: JF3, LAKON Indonesia, French Embassy
+      - Open to: Young Indonesian fashion designers, brands
+      - Offers: 4-month incubation, 39 sessions, buyer access
+    - KUMPUL-X Accelerator
+      - Organizer: KUMPUL
+      - Open to: Indonesian startups, seed to pre-Series A
+      - Offers: Scale-up mentoring, business matching
+      - Status: Flagged, no 2024-2026 cohort verified
+    - GnB Accelerator
+      - Organizer: Fenox Venture Capital, Infocom
+      - Open to: Early-stage mobile, IoT, consumer startups
+      - Offers: 3-month programme, investment, Demo Day
+      - Status: Flagged, no batch found after 2018
+  - Community and private competitions
+    - Startup Arena Pitch Battle
+      - Organizer: Tech in Asia
+      - Open to: Early-stage founders and startups
+      - Offers: Pitch at Tech in Asia Conference Jakarta
+    - Startup World Cup Indonesia
+      - Organizer: Pegasus Tech Ventures, SKALA
+      - Open to: Indonesia PT startups, revenue-generating
+      - Offers: Regional pitch, US final for $1m investment
+    - ClimateLaunchpad Indonesia
+      - Organizer: EIT Climate-KIC, Further
+      - Open to: Early-stage founders, green climate ideas
+      - Offers: Bootcamp, mentoring, national and global finals
+    - Climate Impact Innovations Challenge
+      - Organizer: East Ventures, Temasek Foundation, Tencent
+      - Open to: Climate tech with pilot or MVP, Indonesia-ready
+      - Offers: Catalytic funding to pilot in Indonesia
+    - TECH PLANTER Indonesia
+      - Organizer: Leave a Nest Malaysia
+      - Open to: Early-stage deep-tech startups, researchers
+      - Offers: Demo Day pitching, corporate and investor access
+    - Techstars Startup Weekend Indonesia
+      - Organizer: Techstars, local organisers
+      - Open to: Aspiring entrepreneurs, technical and other
+      - Offers: 54-hour event, pitch, team, build, final pitch
+      - Status: Flagged, no central 2025-2026 edition verified
+    - StartupLokal
+      - Organizer: Community, Natali Ardianto, Nuniek Tirta
+      - Open to: Indonesian startup founders, enthusiasts
+      - Offers: Monthly meetups, talks, networking
+      - Status: Flagged, community meetup, not a competition
+    - Echelon TOP100
+      - Organizer: e27
+      - Open to: Southeast Asian startups, including Indonesian
+      - Offers: TOP100 pitching at Echelon Asia Summit
+      - Status: Flagged, Indonesia satellite last in 2014
+    - DSLaunchpad AI
+      - Organizer: Discovery Shift, DailySocial
+      - Open to: AI startups, under $500k funding, under 10 staff
+      - Offers: 6-week programme, mentoring by tech leaders
+      - Status: Flagged, single 2023 launch, no recurring cohort
+    - ASTA
+      - Organizer: Ministry of Creative Economy, KUMPUL
+      - Open to: Indonesian creative-economy startups
+      - Offers: Business matching forum, Top 10 mentoring
+      - Status: Flagged, new 2026, annual recurrence unverified

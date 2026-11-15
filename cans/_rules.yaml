@@ -16,7 +16,7 @@ slug:
   example: 'Layer 1 — C authorizer -> Layer-1-C-authorizer'
 
 structure:
-  node_length: { min: 3, max: 120 }
+  node_length: { min: 3, max: 75 }
   # Issue #61 — granular node_length. Every member below is OPTIONAL: the
   # bare { min, max } line above already means unit chars / scope title /
   # strip_references false / severity warn (the v0.10 measurement), and any
@@ -48,8 +48,8 @@ structure:
   #                         # indent_aligned: continuations must start at
   #                         # the bullet's text column. severity: the band
   #                         # for ALL multiline findings.
-  siblings: { min: 1, max: 12 }
-  depth: { min: 1, max: 5 }
+  siblings: { min: 3, max: 11 }
+  depth: { min: 4, max: 12 }
   single_child_collapse: true
   empty_nodes: false
 
