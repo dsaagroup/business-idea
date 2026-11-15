@@ -1,18 +1,20 @@
 - Overview
-  - Purpose: Indonesia startup programmes knowledge base
+  - Purpose: Indonesia programmes knowledge base
     - Where: Indonesia programmes only
       - Annual: Repeating programmes, not one-off events
       - National: Open in Indonesia, some regional
       - Verified: Names, organisers, sources checked 15 Nov 2026
       - Programmes: see 07-indonesia-programmes.md#Indonesia-Programmes
-    - Kind: Competitions, incubation, acceleration
+      - Real sector: see 08-indonesia-real-sector-umkm.md
+    - Kind: Competitions, incubation, acceleration, awards
     - Source: Web research, 15 Nov 2026, unverified prizes omitted
-  - Coverage: 47 programmes in 5 groups
+  - Coverage: 89 programmes in 10 groups
     - Government: 9 programmes, Komdigi to IDX
     - Corporate: 10 programmes, finance to telecoms
     - University: 10 programmes, UGM to Telkom University
     - Incubators: 10 programmes, Antler to PINTU
     - Community: 8 programmes, Tech in Asia to Echelon
+    - Real sector: 42 programmes in 5 groups, UMKM to social enterprise
   - Use: Find a programme, check eligibility, verify source
     - Find a programme by group first
     - Check eligibility before applying

@@ -115,7 +115,7 @@
       - 2022: 100 womenpreneurs, 20 groups
         100 womenpreneurs in 20 UMKM groups
         Individual names: TBD, not found in searches
-      - 2023: 153 UMKM selected as mitra
+      - 2023: 153 UMKM selected as partners
         153 UMKM selected as Pertamina mitra binaan
         Individual names: TBD, not found in searches
       - 2024 cycle: 350 womenpreneurs, 13,860 applicants
@@ -140,7 +140,7 @@
         Also: CV Sari Amertha, CV Bali Pure
         Other recipients: Nirgomo, Lokatara Filamen, Izifill
         Other recipients: Iam.Id, Ehealth Pasien, Mirocle, Palmiplast
-      - 2022: Yayasan Upakara Bhuvana Nusantara
+      - 2022: 9 PPBR recipients named
         Yayasan Upakara Bhuvana Nusantara
         PT Miko Bahtera Nusantara, PT Pipetin Indonesia
         PT Asatu Sembilan Enam, PT Greenie Alam Indonesia
@@ -865,7 +865,7 @@
       Offers: 3-month programme, investment, Demo Day
       Cycle: Batches, paused after 2018
       Status: Flagged, no batch found after 2018
-      - Batch 1, 2016: Ahlijasa, KlikDaily, LocalBrand Asia, XWORK, HipCar
+      - Batch 1, 2016: Ahlijasa, KlikDaily, LocalBrand Asia, HipCar
         Ahlijasa, KlikDaily, LocalBrand Asia, 4Doctor, XWORK, HipCar
         Investment: US$50,000 per startup
       - Batch 2, 2017: Bukapintu, Fitnesia, HaloHola, Paprika, PesanLab, PopLegal
