@@ -57,8 +57,14 @@
   - Corporate and bank programmes
     - Wirausaha Muda Mandiri
       - Organizer: Bank Mandiri
-      - Open to: Entrepreneurs 18-35, business 1+ year
+      - Open to: WNI founders 21-35, business 1+ year
+      - Revenue: Rp500m+ per year, 5 sectors only
       - Offers: Prizes, learning, network, financing access
+      - Deadline: 15 Nov 2026, registration closes today
+      - Apply: bmri.id/WMM2026
+      - Selection: 16 Nov-20 Dec 2026, Final 10-15 Jan 2027
+      - Prizes: Over Rp2 billion total
+      - Sectors: Fashion, Beauty, Food and Beverage, Health, Technology
       - Cycle: Annual
       - Winners last 5 cycles: see 08-indonesia-programme-winners.md#Wirausaha-Muda-Mandiri
     - BRIncubator
